@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<main id="main">
+    <header id="movie-header">
+        <h1>{{ title }}</h1>
+    </header>
+    <form method="POST" action="{{ handler_url }}">
+             {{ form.csrf_token }} <!-- Need to include this token - Flask WTForms requires it. -->
+            <div class="form-field">{{ form.search_for.label }} {{ form.search_for }}
+                {% if form.search_for.errors%}
+                    <ul class="errors">
+                        {% for error in form.search_for.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            {{ form.submit }}
+        </form>
+    {% for ele in search_by %}
+    <button class="btn-general" onclick="location.href='{{ ele_urls[ele.name] }}'">{{ ele.name }}</button>
+    {% endfor %}
+    <footer></footer>
+</main>
+{% endblock %}

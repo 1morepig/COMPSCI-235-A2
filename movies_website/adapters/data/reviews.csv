@@ -1,0 +1,4 @@
+id,author-id,movie-id,review-text,timestamp,rating
+1,2,1,"Oh this is the best movie ever",2020-02-28 14:31:01,10
+2,1,1,"Yeah I love this movie too",2020-02-28 14:39:10,8
+3,3,1,"I hope they make the next one soon",2020-02-29 08:12:02,8

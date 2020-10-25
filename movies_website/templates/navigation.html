@@ -1,0 +1,34 @@
+<nav id="nav">
+  <img id="logo" src="{{ url_for('static', filename='pig.png') }}" />
+
+  <h2 id="nav-header">
+    {% if 'username' in session %} Hello, {{ session['username'] }} {%
+    endif %}
+  </h2>
+  <a class="btn-nav" href="{{ url_for('home_bp.home') }}">Home</a>
+  <a class="btn-nav" href="{{ url_for('authentication_bp.register') }}">Register</a>
+  <a class="btn-nav" href="{{ url_for('authentication_bp.login') }}">Login</a>
+  <a class="btn-nav" href="{{ url_for('authentication_bp.logout') }}">Logout</a>
+
+  <div>
+    <h3>
+      <a class="btn-nav" href="{{ url_for('movies_bp.movies_by_release_year') }}">
+        Browse by release year
+      </a>
+      <a class="btn-nav" href="{{ url_for('movies_bp.search_movies_by_actor') }}">
+      Browse by actor
+      </a>
+      <a class="btn-nav" href="{{ url_for('movies_bp.search_movies_by_genre') }}">
+      Browse by genre
+      </a>
+      <a class="btn-nav" href="{{ url_for('movies_bp.search_movies_by_director') }}">
+      Browse by director
+      </a>
+    </h3>
+  </div>
+
+
+  <div id="nav-footer">
+    COMPSCI 235 Software Development is hard!
+  </div>
+</nav>
